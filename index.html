@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legendary Detail LLC - Premium Auto Detailing in St. George, Utah</title>
+    <meta name="description" content="Professional auto detailing services in St. George, UT. Expert ceramic coating, paint correction, and interior detailing. Open weekends.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #d4af37;
+            --light-bg: #f7fafc;
+            --white: #ffffff;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header .tagline {
+            font-size: 1.3em;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 18px 28px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: var(--light-bg);
+            border-bottom-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        /* Hours Section */
+        .hours-location {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hours-card, .location-card {
+            background: var(--light-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .hours-card h3, .location-card h3 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.05em;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .time {
+            color: var(--text-light);
+        }
+
+        .time.open {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+
+        .time.closed {
+            color: #e53e3e;
+            font-weight: 600;
+        }
+
+        /* Map */
+        .map-container {
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Reviews */
+        .reviews-container {
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.3em;
+            letter-spacing: 2px;
+        }
+
+        .review-body {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .show-more-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .show-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 40px auto;
+            background: var(--light-bg);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.05em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.05em;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header .tagline {
+                font-size: 1.1em;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            nav a {
+                padding: 15px 20px;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar with Phone -->
+    <div class="top-bar">
+        <a href="tel:+14357735081">📞 Call Now: (435) 773-5081</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Legendary Detail LLC</h1>
+        <p class="tagline">Premium Auto Detailing Excellence in St. George, Utah</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#hours">Hours & Location</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Exterior Detailing</h3>
+                    <p>Complete exterior wash, clay bar treatment, paint correction, and premium wax or sealant application for a showroom finish.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Interior Detailing</h3>
+                    <p>Deep cleaning of all interior surfaces, leather conditioning, carpet shampooing, and odor elimination for a fresh cabin experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ceramic Coating</h3>
+                    <p>Professional-grade ceramic coating application providing years of protection against environmental damage and UV rays.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Paint Correction</h3>
+                    <p>Multi-stage paint correction to remove swirl marks, scratches, and oxidation, restoring your vehicle's original luster.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Headlight Restoration</h3>
+                    <p>Professional restoration of cloudy, yellowed headlights to improve visibility and enhance your vehicle's appearance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Engine Bay Detailing</h3>
+                    <p>Thorough cleaning and degreasing of your engine bay, making maintenance easier and your engine compartment look brand new.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hours and Location Section -->
+        <section id="hours">
+            <h2>Hours & Location</h2>
+            <div class="hours-location">
+                <div class="hours-card">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span><span class="time closed">Closed</span></li>
+                        <li><span class="day">Tuesday</span><span class="time closed">Closed</span></li>
+                        <li><span class="day">Wednesday</span><span class="time closed">Closed</span></li>
+                        <li><span class="day">Thursday</span><span class="time closed">Closed</span></li>
+                        <li><span class="day">Friday</span><span class="time closed">Closed</span></li>
+                        <li><span class="day">Saturday</span><span class="time open">Open 24 Hours</span></li>
+                        <li><span class="day">Sunday</span><span class="time open">Open 24 Hours</span></li>
+                    </ul>
+                </div>
+                <div class="location-card">
+                    <h3>Visit Us</h3>
+                    <p><strong>Address:</strong><br>1450 N Dixie Downs Rd<br>St. George, UT 84770</p>
+                    <p style="margin-top: 20px;"><strong>Phone:</strong><br><a href="tel:+14357735081" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">(435) 773-5081</a></p>
+                    <p style="margin-top: 20px;">
+                        <a href="https://www.google.com/maps/place/Legendary+Detail+LLC/@37.1327525,-113.6598063,14z/data=!4m10!1m2!2m1!1sutah+st+george+car+detailLegendary+Detail+LLC!3m6!1s0x80ca43d72536a2a5:0x9bf710f013f84727!8m2!3d37.1327525!4d-113.6216975!15sCi11dGFoIHN0IGdlb3JnZSBjYXIgZGV0YWlsTGVnZW5kYXJ5IERldGFpbCBMTENaLyItdXRhaCBzdCBnZW9yZ2UgY2FyIGRldGFpbGxlZ2VuZGFyeSBkZXRhaWwgbGxjkgEVY2FyX2RldGFpbGluZ19zZXJ2aWNlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU0zYjNGeFpGcEJFQUXgAQD6AQQIbRAh!16s%2Fg%2F11w2jtp29c?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">View on Google Maps →</a>
+                    </p>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25446.709547586644!2d-113.65980632568358!3d37.13275250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca43d72536a2a5%3A0x9bf710f013f84727!2sLegendary%20Detail%20LLC!5e0!3m2!1sen!2sus!4v1761352299185!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-container" id="reviewsContainer"></div>
+            <button class="show-more-btn" id="showMoreBtn" style="display: none;">Show More Reviews</button>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    There was an error sending your message. Please try again or call us directly.
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="exterior">Exterior Detailing</option>
+                            <option value="interior">Interior Detailing</option>
+                            <option value="ceramic">Ceramic Coating</option>
+                            <option value="paint">Paint Correction</option>
+                            <option value="headlight">Headlight Restoration</option>
+                            <option value="engine">Engine Bay Detailing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#hours">Hours</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.google.com/maps/place/Legendary+Detail+LLC/@37.1327525,-113.6598063,14z/data=!4m10!1m2!2m1!1sutah+st+george+car+detailLegendary+Detail+LLC!3m6!1s0x80ca43d72536a2a5:0x9bf710f013f84727!8m2!3d37.1327525!4d-113.6216975!15sCi11dGFoIHN0IGdlb3JnZSBjYXIgZGV0YWlsTGVnZW5kYXJ5IERldGFpbCBMTENaLyItdXRhaCBzdCBnZW9yZ2UgY2FyIGRldGFpbGxlZ2VuZGFyeSBkZXRhaWwgbGxjkgEVY2FyX2RldGFpbGluZ19zZXJ2aWNlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU0zYjNGeFpGcEJFQUXgAQD6AQQIbRAh!16s%2Fg%2F11w2jtp29c?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Maps</a>
+            </div>
+            <p style="font-size: 1.1em; margin-top: 20px;">Legendary Detail LLC - Owned by Branden</p>
+            <p style="margin-top: 10px;">1450 N Dixie Downs Rd, St. George, UT 84770</p>
+            <p style="margin-top: 10px;"><a href="tel:+14357735081" style="color: var(--white); text-decoration: none;">(435) 773-5081</a></p>
+            <div class="copyright">
+                <p>&copy; 2025 Legendary Detail LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reviews data - Add your actual reviews here
+        const reviews = [
+            { name: "Customer 1", rating: 5, body: "" },
+            { name: "Customer 2", rating: 5, body: "" },
+            { name: "Customer 3", rating: 5, body: "" },
+            { name: "Customer 4", rating: 5, body: "" },
+            { name: "Customer 5", rating: 5, body: "" }
+        ];
+
+        const REVIEWS_PER_PAGE = 6;
+        let currentReviewIndex = 0;
+
+        function displayReviews() {
+            const container = document.getElementById('reviewsContainer');
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            
+            const reviewsToShow = reviews.slice(0, currentReviewIndex + REVIEWS_PER_PAGE);
+            
+            container.innerHTML = '';
+            reviewsToShow.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                
+                const stars = '★'.repeat(review.rating);
+                
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="stars">${stars}</span>
+                    </div>
+                    ${review.body ? `<p class="review-body">${review.body}</p>` : ''}
+                `;
+                
+                container.appendChild(reviewCard);
+            });
+            
+            currentReviewIndex += REVIEWS_PER_PAGE;
+            
+            const remainingReviews = reviews.length - currentReviewIndex;
+            if (remainingReviews > 0) {
+                showMoreBtn.style.display = 'block';
+                const reviewsToLoad = Math.min(remainingReviews, REVIEWS_PER_PAGE);
+                showMoreBtn.textContent = `Show ${reviewsToLoad} More ${reviewsToLoad === 1 ? 'Review' : 'Reviews'} (Total ${remainingReviews})`;
+            } else {
+                showMoreBtn.style.display = 'none';
+            }
+        }
+
+        document.getElementById('showMoreBtn').addEventListener('click', displayReviews);
+
+        // Initialize reviews on page load
+        if (reviews.length > 0) {
+            displayReviews();
+        }
+
+        // Contact form submission
+        // REPLACE 'YOUR_LOCATION_ID' WITH YOUR ACTUAL SQUARE LOCATION ID
+        const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID';
+        
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const submitBtn = e.target.querySelector('.submit-btn');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+            
+            try {
+                // Here you would integrate with your email service
+                // For now, we'll use a mailto fallback or you can integrate with Square API
+                
+                // Option 1: Mailto fallback (always works)
+                const subject = encodeURIComponent(`New Contact Form Submission - ${formData.service || 'General Inquiry'}`);
+                const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`);
+                
+                // You can replace this email with Branden's email
+                window.location.href = `mailto:contact@legendarydetail.com?subject=${subject}&body=${body}`;
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                e.target.reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
